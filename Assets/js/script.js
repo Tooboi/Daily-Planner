@@ -23,6 +23,14 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  var dateEl = $('#currentDay');
+  var now = dayjs().format('dddd, MMM D YYYY, h:mm A');
+  var currentHour = dayjs().hour();
+  console.log('page has loaded');
+  console.log(currentHour);
+
+
+  dateEl.text(now)
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
