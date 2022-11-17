@@ -36,21 +36,20 @@ $(function () {
     $('#hour-16'),
     $('#hour-17')
   ]
-  var saveItems = [];
+  //get current time
   var dateEl = $('#currentDay');
   var now = dayjs().format('dddd, MMM D YYYY, h:mm A');
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour.
-  // dayjs().hour()
-  var currentHour = 10;
+  var currentHour = dayjs().hour();
   currentHour-=9;
   console.log("currentHour ", currentHour);
 
   for (let i = 0; i < hoursAr.length; i++) {
     var presentHour = i;
     var currentHourEl = hoursAr[i];
-    
+    console.log("currentHourEl ", currentHourEl)
     if (presentHour === currentHour) {
       currentHourEl.attr('class', 'row time-block present')
      } 
@@ -60,7 +59,11 @@ $(function () {
      if (presentHour > currentHour) {
       currentHourEl.attr('class', 'row time-block future')
      }
-}
+      console.log(currentHourEl.dataset);
+     var textareaKey = currentHourEl.dataset.name
+     console.log(textareaKey);
+    //  window.localStorage.getItem(textareaKey)
+  }
 
   // TODO: Add a listener for click events on the save button. 
   function clickButton(event) {
@@ -69,7 +72,7 @@ $(function () {
     var buttonParent = $(selectedButton).parent();
     var buttonTextarea = $(selectedButton).siblings()[1].value;
     var buttonName = buttonParent[0].id;
-
+    
     localStorage.setItem(JSON.stringify(buttonName), JSON.stringify(buttonTextarea))
     console.log($(selectedButton).siblings()[1]);
     
@@ -82,7 +85,23 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
 
+  // for (let i = 0; i < hoursAr.length; i++) {
+  //   var presentHour = i;
+  //   var currentHourEl = hoursAr[i];
+    
+  //   // var textareaKey = currentHourEl.getAttribute("data-name");
 
+     
+  //   if (currentHourEl.matches('div')) {
+
+  //   }
+  // }
+
+  document
+  
+  //get item with same name as data attr
+  
+  //paste the key data to corresponding textarea
 
   // TODO: Add code to display the current date in the header of the page.
   dateEl.text(now)
