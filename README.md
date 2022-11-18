@@ -1,40 +1,29 @@
 # Daily Planner
 
+![GitHub language count](https://img.shields.io/github/languages/count/tooboi/Daily-Planner?color=%2306aed5)
+![GitHub top language](https://img.shields.io/github/languages/top/tooboi/Daily-Planner?color=%2306aed5&logo=HTML5&logoColor=%2306aed5)
+![GitHub](https://img.shields.io/github/license/tooboi/daily-planner?color=%2306aed5)
+
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+A daily planner that will hold user inputs until replaced. The current time and day is displayed as well.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+- To assist in planning out your day
+- This will allow you to store a single work days worth of activities
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Click on the following link to view the deployed page: [Daily Schedule](https://tooboi.github.io/Daily-Planner/)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+![Example Page](./Assets/images/Ex.png)
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+## Credits and Technologies
 
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+- [jquery](https://jquery.com/)
+- [w3schools](https://www.w3schools.com/)
+- [mozilla](https://developer.mozilla.org/en-US/)
+- [day.js](https://day.js.org/)
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+- [MIT License](./LICENSE)
