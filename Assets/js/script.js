@@ -1,6 +1,3 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
   var hoursAr = [
     $("#hour-9"),
@@ -16,11 +13,9 @@ $(function () {
   //get current time
   var dateEl = $("#currentDay");
   var now = dayjs().format("dddd, MMM D YYYY, h:mm A");
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour.
+  //Add code to apply the past, present, or future class
   var currentHour = dayjs().hour(); //put in the hour you want to test here instead of dayjs().hour();
   currentHour -= 9;
-console.log(currentHour);
   for (let i = 0; i < hoursAr.length; i++) {
     var presentHour = i;
     var currentHourEl = hoursAr[i];
@@ -33,19 +28,16 @@ console.log(currentHour);
     if (presentHour > currentHour) {
       currentHourEl.attr("class", "row time-block future");
     }
-    // TODO: Add code to get any user input that was saved in localStorage and set
-    // the values of the corresponding textarea elements. HINT: How can the id
-    // attribute of each time-block be used to do this?
+    //Add code to get any user input that was saved in localStorage
     var textareaKey = currentHourEl[0].dataset.name;
     var textareaEl = currentHourEl[0].children[1].dataset.text;
     var textInArea = window.localStorage.getItem(JSON.stringify(textareaEl));
     var textAreaElement = currentHourEl[0].children[1];
-    console.log(textareaEl);
     if (textareaKey === textareaEl && textInArea !== null) {
       textAreaElement.append(JSON.parse(textInArea));
     }
   }
-  // TODO: Add a listener for click events on the save button.
+  //Add a listener for click events on the save button.
   function clickButton(event) {
     event.preventDefault;
     var selectedButton = this;
@@ -56,7 +48,6 @@ console.log(currentHour);
     localStorage.setItem(JSON.stringify(buttonName), JSON.stringify(buttonTextarea));
   }
   $(".btn").on("click", this, clickButton);
-
-  // TODO: Add code to display the current date in the header of the page.
+  //display the current date in the header of the page
   dateEl.text(now);
 });
