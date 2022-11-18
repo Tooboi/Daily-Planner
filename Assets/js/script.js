@@ -16,12 +16,11 @@ $(function () {
   //get current time
   var dateEl = $("#currentDay");
   var now = dayjs().format("dddd, MMM D YYYY, h:mm A");
-
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour.
-  var currentHour = 12;
+  var currentHour = dayjs().hour(); //put in the hour you want to test here instead of dayjs().hour();
   currentHour -= 9;
-
+console.log(currentHour);
   for (let i = 0; i < hoursAr.length; i++) {
     var presentHour = i;
     var currentHourEl = hoursAr[i];
